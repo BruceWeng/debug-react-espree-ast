@@ -1,7 +1,8 @@
 /**
-function Valid() {
+function Bugged() {
   const res = [];
-  for (let i = 0; i !== 10; ++i ) {
+  const additionalCond = true;
+  for (let i = 0; i !== 10 && additionalCond; ++i ) {
     res.push(i);
   }
   React.useLayoutEffect(() => {});
@@ -10,45 +11,45 @@ function Valid() {
 {
   "type": "Program",
   "start": 0,
-  "end": 130,
+  "end": 180,
   "body": [
     {
       "type": "FunctionDeclaration",
       "start": 0,
-      "end": 130,
+      "end": 180,
       "id": {
         "type": "Identifier",
         "start": 9,
-        "end": 14,
-        "name": "Valid"
+        "end": 15,
+        "name": "Bugged"
       },
       "expression": false,
       "generator": false,
       "params": [],
       "body": {
         "type": "BlockStatement",
-        "start": 17,
-        "end": 130,
+        "start": 18,
+        "end": 180,
         "body": [
           {
             "type": "VariableDeclaration",
-            "start": 21,
-            "end": 36,
+            "start": 22,
+            "end": 37,
             "declarations": [
               {
                 "type": "VariableDeclarator",
-                "start": 27,
-                "end": 35,
+                "start": 28,
+                "end": 36,
                 "id": {
                   "type": "Identifier",
-                  "start": 27,
-                  "end": 30,
+                  "start": 28,
+                  "end": 31,
                   "name": "res"
                 },
                 "init": {
                   "type": "ArrayExpression",
-                  "start": 33,
-                  "end": 35,
+                  "start": 34,
+                  "end": 36,
                   "elements": []
                 }
               }
@@ -56,28 +57,54 @@ function Valid() {
             "kind": "const"
           },
           {
+            "type": "VariableDeclaration",
+            "start": 40,
+            "end": 68,
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "start": 46,
+                "end": 67,
+                "id": {
+                  "type": "Identifier",
+                  "start": 46,
+                  "end": 60,
+                  "name": "additionalCond"
+                },
+                "init": {
+                  "type": "Literal",
+                  "start": 63,
+                  "end": 67,
+                  "value": true,
+                  "raw": "true"
+                }
+              }
+            ],
+            "kind": "const"
+          },
+          {
             "type": "ForStatement",
-            "start": 39,
-            "end": 93,
+            "start": 71,
+            "end": 143,
             "init": {
               "type": "VariableDeclaration",
-              "start": 44,
-              "end": 53,
+              "start": 76,
+              "end": 85,
               "declarations": [
                 {
                   "type": "VariableDeclarator",
-                  "start": 48,
-                  "end": 53,
+                  "start": 80,
+                  "end": 85,
                   "id": {
                     "type": "Identifier",
-                    "start": 48,
-                    "end": 49,
+                    "start": 80,
+                    "end": 81,
                     "name": "i"
                   },
                   "init": {
                     "type": "Literal",
-                    "start": 52,
-                    "end": 53,
+                    "start": 84,
+                    "end": 85,
                     "value": 0,
                     "raw": "0"
                   }
@@ -86,64 +113,76 @@ function Valid() {
               "kind": "let"
             },
             "test": {
-              "type": "BinaryExpression",
-              "start": 55,
-              "end": 63,
+              "type": "LogicalExpression",
+              "start": 87,
+              "end": 113,
               "left": {
-                "type": "Identifier",
-                "start": 55,
-                "end": 56,
-                "name": "i"
+                "type": "BinaryExpression",
+                "start": 87,
+                "end": 95,
+                "left": {
+                  "type": "Identifier",
+                  "start": 87,
+                  "end": 88,
+                  "name": "i"
+                },
+                "operator": "!==",
+                "right": {
+                  "type": "Literal",
+                  "start": 93,
+                  "end": 95,
+                  "value": 10,
+                  "raw": "10"
+                }
               },
-              "operator": "!==",
+              "operator": "&&",
               "right": {
-                "type": "Literal",
-                "start": 61,
-                "end": 63,
-                "value": 10,
-                "raw": "10"
+                "type": "Identifier",
+                "start": 99,
+                "end": 113,
+                "name": "additionalCond"
               }
             },
             "update": {
               "type": "UpdateExpression",
-              "start": 65,
-              "end": 68,
+              "start": 115,
+              "end": 118,
               "operator": "++",
               "prefix": true,
               "argument": {
                 "type": "Identifier",
-                "start": 67,
-                "end": 68,
+                "start": 117,
+                "end": 118,
                 "name": "i"
               }
             },
             "body": {
               "type": "BlockStatement",
-              "start": 71,
-              "end": 93,
+              "start": 121,
+              "end": 143,
               "body": [
                 {
                   "type": "ExpressionStatement",
-                  "start": 77,
-                  "end": 89,
+                  "start": 127,
+                  "end": 139,
                   "expression": {
                     "type": "CallExpression",
-                    "start": 77,
-                    "end": 88,
+                    "start": 127,
+                    "end": 138,
                     "callee": {
                       "type": "MemberExpression",
-                      "start": 77,
-                      "end": 85,
+                      "start": 127,
+                      "end": 135,
                       "object": {
                         "type": "Identifier",
-                        "start": 77,
-                        "end": 80,
+                        "start": 127,
+                        "end": 130,
                         "name": "res"
                       },
                       "property": {
                         "type": "Identifier",
-                        "start": 81,
-                        "end": 85,
+                        "start": 131,
+                        "end": 135,
                         "name": "push"
                       },
                       "computed": false
@@ -151,8 +190,8 @@ function Valid() {
                     "arguments": [
                       {
                         "type": "Identifier",
-                        "start": 86,
-                        "end": 87,
+                        "start": 136,
+                        "end": 137,
                         "name": "i"
                       }
                     ]
@@ -163,26 +202,26 @@ function Valid() {
           },
           {
             "type": "ExpressionStatement",
-            "start": 96,
-            "end": 128,
+            "start": 146,
+            "end": 178,
             "expression": {
               "type": "CallExpression",
-              "start": 96,
-              "end": 127,
+              "start": 146,
+              "end": 177,
               "callee": {
                 "type": "MemberExpression",
-                "start": 96,
-                "end": 117,
+                "start": 146,
+                "end": 167,
                 "object": {
                   "type": "Identifier",
-                  "start": 96,
-                  "end": 101,
+                  "start": 146,
+                  "end": 151,
                   "name": "React"
                 },
                 "property": {
                   "type": "Identifier",
-                  "start": 102,
-                  "end": 117,
+                  "start": 152,
+                  "end": 167,
                   "name": "useLayoutEffect"
                 },
                 "computed": false
@@ -190,16 +229,16 @@ function Valid() {
               "arguments": [
                 {
                   "type": "ArrowFunctionExpression",
-                  "start": 118,
-                  "end": 126,
+                  "start": 168,
+                  "end": 176,
                   "id": null,
                   "expression": false,
                   "generator": false,
                   "params": [],
                   "body": {
                     "type": "BlockStatement",
-                    "start": 124,
-                    "end": 126,
+                    "start": 174,
+                    "end": 176,
                     "body": []
                   }
                 }
